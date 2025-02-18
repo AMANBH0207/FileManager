@@ -3,9 +3,15 @@ import { faEnvelope } from '@fortawesome/free-regular-svg-icons'
 import { faPhone } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useState, React } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 function Login() {
+  const navigate = useNavigate();
   const[login,setLogin]=useState('email')
+
+  const navigatetoExplorer = ()=>{
+    navigate('/explorer')
+  }
 
 
   return (
@@ -67,7 +73,7 @@ function Login() {
       </div>
 
       <div>
-        <button type="submit" className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm/6 font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Sign in</button>
+        <button type="submit" className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm/6 font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600" onClick={navigatetoExplorer}>Sign in</button>
       </div>
     </form>
 
